@@ -5,9 +5,11 @@
   "repository": "https://gitlab.com/viseo-pwm-poc/share-dev-meta-info.git",
   "license": "MIT",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "lint": "eslint"
   },
   "devDependencies": {
+    "eslint": "^8.22.0",
     "typescript": "^4.7.4"
   }
 }
