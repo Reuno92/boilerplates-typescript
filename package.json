@@ -7,7 +7,8 @@
   "scripts": {
     "tsc": "tsc",
     "lint": "eslint src/**/*.ts --color",
-    "test": "echo test"
+    "test": "echo test",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
