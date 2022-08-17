@@ -1,0 +1,7 @@
+{
+  "name": "share-dev-meta-info",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitlab.com/viseo-pwm-poc/share-dev-meta-info.git",
+  "license": "MIT"
+}
