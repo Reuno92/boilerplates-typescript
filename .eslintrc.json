@@ -3,13 +3,19 @@
         "es2021": true,
         "node": true
     },
-    "extends": "standard-with-typescript",
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint/recommended",
+        "plugin:@typescript-eslint/recommended", // Enable all recommended rules.
+        "plugin:@typescript-eslint/recommended-requiring-type-checking", // Enable type every times.
+    ],
     "overrides": [
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "rules": {
-    }
 }
