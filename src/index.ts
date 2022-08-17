@@ -2,6 +2,11 @@ console.warn('TEST');
 console.error('TEST AGAIN');
 // console.log('FAILED TEST');
 
-const first = (): string => {
-  return '';
+const makeMeAString = (
+  arg: string | number | Date,
+  options?: { [key: string]: string }
+): string => {
+  return arg.toString();
 };
+
+export default makeMeAString;
