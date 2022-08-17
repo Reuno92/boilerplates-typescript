@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "https://gitlab.com/viseo-pwm-poc/share-dev-meta-info.git",
   "license": "MIT",
+  "scripts": {
+    "tsc": "tsc"
+  },
   "devDependencies": {
     "typescript": "^4.7.4"
   }
