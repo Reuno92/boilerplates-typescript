@@ -8,7 +8,7 @@ describe("Testology", () => {
     });
 
     it("should return human readable full date with a Date", () => {
-        const TARGET_DATE = "Jeudi 7 Avril 2022";
+        const TARGET_DATE = "jeudi 7 avril 2022";
         const DATE = new Date("04/07/2022");
         const TEST = makeMeAString(
             DATE,
@@ -21,6 +21,8 @@ describe("Testology", () => {
                 day     : "numeric"
             }
         );
+
+        console.log("TEST INSIDE", TEST);
 
         expect(typeof TEST).toBe("string");
         expect(makeMeAString(TEST)).toBe(TARGET_DATE);

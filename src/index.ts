@@ -19,10 +19,10 @@ const makeMeAString = (
   arg: string | number | Date,
   options?: DateType
 ): string => {
-  if (arg instanceof Date)
-    arg.toLocaleString(
+  if (arg instanceof Date) {
+    return arg.toLocaleDateString(
       options?.language && options?.country
-        ? `${options.country}-${options.language}`
+        ? `${options.language}-${options.country}`
         : undefined,
       {
         weekday: options?.weekday,
@@ -31,8 +31,7 @@ const makeMeAString = (
         day: options?.day,
       }
     );
-
+  }
   return arg.toString();
 };
-
 export default makeMeAString;
