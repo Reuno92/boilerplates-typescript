@@ -1,14 +1,37 @@
 /**
- * Lourd de chez lourd
+ * J'ai pour gérer un case d'usage aussi moisi. :)
  */
 console.warn('TEST');
 console.error('TEST AGAIN');
-// console.log('FAILED TEST');
+
+type YearDayType = 'numeric' | '2-digit' | undefined;
+
+interface DateType {
+  language: string | undefined;
+  country: string | undefined;
+  weekday: 'long' | 'short' | 'narrow' | undefined;
+  month: 'long' | 'short' | 'narrow' | 'numeric' | '2-digit' | undefined;
+  year: YearDayType;
+  day: YearDayType;
+}
 
 const makeMeAString = (
-  arg: string | number,
-  options?: { [key: string]: string }
+  arg: string | number | Date,
+  options?: DateType
 ): string => {
+  if (arg instanceof Date)
+    arg.toLocaleString(
+      options?.language && options?.country
+        ? `${options.country}-${options.language}`
+        : undefined,
+      {
+        weekday: options?.weekday,
+        month: options?.month,
+        year: options?.year,
+        day: options?.day,
+      }
+    );
+
   return arg.toString();
 };
 

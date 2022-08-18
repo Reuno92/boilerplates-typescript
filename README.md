@@ -510,3 +510,124 @@ git push origin le_nom_de_sa_branch
 
 Il reçu une nouvelle missive !
 
+Un première erreur, une date est attendu...
+
+Mais en ajoutant le type Date, il se retrouve avec plusieurs info. 
+
+```bash
+console.warn
+    TEST
+
+      2 |  * Lourd de chez lourd
+      3 |  */
+    > 4 | console.warn('TEST');
+        |         ^
+      5 | console.error('TEST AGAIN');
+      6 | // console.log('FAILED TEST');
+      7 |
+
+      at Object.<anonymous> (src/index.ts:4:9)
+      at Object.<anonymous> (test/index.test.ts:1:1)
+```
+
+```bash
+console.error
+    TEST AGAIN
+
+      3 |  */
+      4 | console.warn('TEST');
+    > 5 | console.error('TEST AGAIN');
+        |         ^
+      6 | // console.log('FAILED TEST');
+      7 |
+      8 | const makeMeAString = (
+
+      at Object.<anonymous> (src/index.ts:5:9)
+      at Object.<anonymous> (test/index.test.ts:1:1)
+```
+
+
+```bash
+Testology
+    √ should always return a string with a random number (3 ms)
+    × should return human readable full date with a Date (8 ms)
+
+  ● Testology › should return human readable full date with a Date
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Jeudi 7 Avril 2022"
+    Received: "Thu Apr 07 2022 00:00:00 GMT+0200 (heure d’été d’Europe centrale)"
+
+      24 |
+      25 |         expect(typeof TEST).toBe("string");
+    > 26 |         expect(makeMeAString(TEST)).toBe(TARGET_DATE);
+         |                                     ^
+      27 |     });
+      28 | });
+
+      at Object.<anonymous> (test/index.test.ts:26:37)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 passed, 2 total
+Snapshots:   0 total
+Time:        1.962 s
+Ran all test suites.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+husky - pre-push hook exited with code 1 (error)
+error: failed to push some refs to 'https://gitlab.com/viseo-pwm-poc/share-dev-meta-info.git'
+```
+
+Il faut qu'il transforme son objet date en string. Mais n'écoutant que son courage il releva le défi.
+
+```typescript
+/**
+ * J'ai pour gérer un case d'usage aussi moisi. :)
+ */
+ console.warn('TEST');console.error('TEST AGAIN');type YearDayType="numeric"|"2-digit"|undefined;interface DateType {language:string,country: string,weekday:"long"|"short"|"narrow"|undefined,month:"long"|"short"|"narrow"|"numeric"|"2-digit"|undefined,year:YearDayType,day:YearDayType}const makeMeAString = (arg:string|number|Date,options?:DateType):string=>{if(arg instanceof Date)arg.toLocaleString(`${options?.language}-${options?.country}`,{weekday:options?.weekday,month:options?.month,year:options?.year,day:options?.day});return arg.toString();};export default makeMeAString;
+```
+
+Après une correction du linter et du correction mineur
+
+```typescript
+/**
+ * J'ai pour gérer un case d'usage aussi moisi. :)
+ */
+console.warn('TEST');
+console.error('TEST AGAIN');
+
+type YearDayType = 'numeric' | '2-digit' | undefined;
+
+interface DateType {
+  language: string | undefined;
+  country: string | undefined;
+  weekday: 'long' | 'short' | 'narrow' | undefined;
+  month: 'long' | 'short' | 'narrow' | 'numeric' | '2-digit' | undefined;
+  year: YearDayType;
+  day: YearDayType;
+}
+
+const makeMeAString = (
+  arg: string | number | Date,
+  options?: DateType
+): string => {
+
+  if (arg instanceof Date)
+    arg.toLocaleString(
+      options?.language && options?.country
+        ? `${options.language}-${options.country}`
+        : undefined,
+      {
+        weekday: options?.weekday,
+        month: options?.month,
+        year: options?.year,
+        day: options?.day,
+      }
+    );
+    
+  return arg.toString();
+};
+export default makeMeAString;
+
+```
