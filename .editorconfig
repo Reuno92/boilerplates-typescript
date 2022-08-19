@@ -1,0 +1,29 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Règle la plus important sinon tout les IDE l'ignore.
+root = true
+
+# Tout les fichiers
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+
+# Type fichier spécifique, ici python
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Correspondance avec des fichiers multiples
+[*.{js,jsx,ts,tsx}]
+charset = utf-8
+
+# Dans un dossier spécifique et tous les sous répertoires
+[src/**.{ts,tsx}]
+indent_style = space
+indent_size = 2
+
+# Correspondance avec le nom exact des fichiers
+[{package.json, .gitlab_ci.yml}]
+indent_style = space
+indent_style = 2

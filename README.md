@@ -40,7 +40,6 @@ yarn
 
 
 ## Procédure
-
 [Remonter au sommaire](#sommaire)
 
 > Ne pas éditer package.json avant la fin, les différents modules font des changements notamment **Prettier** qui supprime les Array `Includes` et `Excludes`...
@@ -85,6 +84,7 @@ yarn lint --init
 
 ### 6 - Configuration ESLint
 [Remonter au sommaire](#sommaire)
+
 `.eslintrc.json`
 ```json
 {
@@ -279,6 +279,7 @@ fi
 
 ### 14 - Edition tsconfig.json
 [Remonter au sommaire](#sommaire)
+
 ```json
 {
     "compilerOptions":
@@ -322,6 +323,7 @@ Et inclure l'inclure dans vos fichier pre-* comme suit:
 
 ## Explication des règles de ESLint
 [Remonter au sommaire](#sommaire)
+
 .eslintrc
 ```json
 {
@@ -369,7 +371,6 @@ Ca evitera de lancer les scripts malicieux en prod:
 ```
 
 ## 🧙‍♂️ Un fichier de configuration pour les gouverner tous 💍
-
 [Remonter au sommaire](#sommaire)
 
 Pour pourvoir editer des règles pour tous les IDE, il existe un fichier de configuration `EditorConfig` et des paramètres/extension pour chaque IDE.
