@@ -193,11 +193,11 @@ nav {
 > yarn transpile-css
 > ```
 
-#### Fichier partiels
+#### **Fichier partiels**
 
 Vous pouvez créer des fichiers Sass partiels contenant de petits fragments de CSS que vous pouvez inclure dans d'autres fichiers Sass. C'est un excellent moyen de modulariser votre CSS et d'en faciliter la maintenance. Un fichier partiel est un fichier Sass nommé avec un underscore. Vous pouvez le nommer comme `_partial.scss`. Le trait de soulignement indique à Sass que le fichier n'est qu'un fichier partiel et qu'il ne doit pas être généré dans un fichier CSS. Les partiels de Sass sont utilisés avec la règle `@use`.
 
-#### Modules
+#### **Modules**
 
 Vous n'êtes pas obligé d'écrire tout votre Sass dans un seul fichier. Vous pouvez le diviser comme bon vous semble avec la règle @use. Cette règle charge un autre fichier Sass comme un module, ce qui signifie que vous pouvez faire référence à ses variables, mixins et fonctions dans votre fichier Sass avec un espace de nom basé sur le nom du fichier. L'utilisation d'un fichier inclut également le CSS qu'il génère dans votre sortie compilée !
 
@@ -235,7 +235,7 @@ body {
 }
 ```
 
-#### Mixines 
+#### **Mixines** 
 En réalité des functions
 
 Certaines choses en CSS sont un peu fastidieuses à écrire, surtout avec CSS3 et les nombreux préfixes de moteur de navigateur qui existent. Un mixin vous permet de créer des groupes de déclarations CSS que vous souhaitez réutiliser dans votre site. Cela vous aide à garder votre Sass très DRY. Vous pouvez même passer des valeurs pour rendre votre mixin plus flexible.
@@ -279,7 +279,7 @@ Donne en CSS
 }
 ```
 
-#### Héritage
+#### **Héritage**
 L'utilisation de @extend vous permet de partager un ensemble de propriétés CSS d'un sélecteur à un autre. Dans notre exemple, nous allons créer une série simple de messages pour les erreurs, les avertissements et les réussites en utilisant une autre fonctionnalité qui va de pair avec extend, les classes placeholder. Une classe de type placeholder est un type spécial de classe qui ne s'imprime que lorsqu'elle est étendue, et peut vous aider à garder votre CSS compilé propre et net.
 
 ```scss
@@ -347,7 +347,7 @@ L'utilisation de @extend vous permet de partager un ensemble de propriétés CSS
  ```
 
 
-#### Operator
+#### **Operator**
 
 Il est très utile de faire des mathématiques dans votre CSS. Sass dispose d'une poignée d'opérateurs mathématiques standard comme +, -, *, math.div() et %. Dans notre exemple, nous allons faire quelques calculs mathématiques simples pour calculer la largeur d'un article et d'un côté.
 
@@ -386,4 +386,4 @@ aside[role="complementary"] {
 }
 ```
 
-Plus de possibilité dans la documentation [ici](https://sass-lang.com/documentation/).
+Plus de possibilités dans la documentation [ici](https://sass-lang.com/documentation/).
