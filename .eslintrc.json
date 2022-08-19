@@ -10,7 +10,8 @@
       "files": ["*.ts"],
       "extends": [
         "plugin:@typescript-eslint/recommended", // Enable all recommended rules.
-        "plugin:@typescript-eslint/recommended-requiring-type-checking" // Enable type every times.
+        "plugin:@typescript-eslint/recommended-requiring-type-checking", // Enable type every times.
+        "prettier"
       ],
       "parserOptions": {
         "project": "./tsconfig.json"

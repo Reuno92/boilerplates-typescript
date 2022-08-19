@@ -11,7 +11,7 @@ Un boilerplate pour NodeJS avec Typescript entièrement configurable et partiell
 ## Sommaire
 * [Démarrage](#démarrage)
 * [Dépendances](#dépendances)
-* [Explication de la procédure](#explication-de-la-procédure)
+* [Procédure](#procédure)
 * [Explication de la configuration .prettierrc](#explication-de-la-configuration-prettierrc)
 * [Pourquoi utiliser Husky](#pourquoi-utiliser-🐺-husky-🐺)
 * [Un fichier pour tout les IDE](#🧙‍♂️-un-fichier-de-configuration-pour-les-gouverner-tous-💍)
@@ -39,7 +39,7 @@ yarn
 
 
 
-## Explication de la procédure
+## Procédure
 
 [Remonter au sommaire](#sommaire)
 
@@ -140,6 +140,33 @@ yarn add prettier -D
 }
 ```
 
+puis on ajoute un plugin pour prettier pour qu'il passe dans le linter.
+
+`.eslintrc`
+```json
+{
+  ...
+  "plugins": [
+    "prettier",
+    ...
+  ],
+  ...
+  "extends": [
+    ...
+    // Toujours à la fin. Pour surcharger, les autres configurations
+    "prettier"
+  ],
+  ...
+  "rules": [
+    // Déclenche des erreur sur les règles de prettier
+    "prettier:prettier": "error",
+  ] 
+  ...
+}
+```
+
+Pour plus d'info, voir [ici](#explication-des-règles-de-eslint)
+
 > Pour comprendre voir [ici](#explication-de-la-configuration-prettierrc)
 
 ### 10 - Installation de Jest
@@ -193,7 +220,7 @@ Ajouter les scripts suivants:
 yarn add husky -D
 ``` 
 
-### 13 - Configuration Husky dans **package.json**
+### 13 - Configuration Husky
 ```bash
 npm set-script prepare "husky install"
 nom run prepare
@@ -292,6 +319,25 @@ Et inclure l'inclure dans vos fichier pre-* comme suit:
 | traillingComa  | `as-needed`, `consistent` ou `preserve` | `as-needed` - Only add quotes around object properties where required.<br> `consistent` - If at least one property in an object requires quotes, quote all properties.<br> `preserve` - Respect the input use of quotes in object properties. |
 
 *Toutes les explications se trouve sur la [documentation](https://prettier.io/docs/en/options.html) UNIQUEMENT en anglais.*
+
+## Explication des règles de ESLint
+[Remonter au sommaire](#sommaire)
+.eslintrc
+```json
+{
+  ...
+  "rules": {
+    "prettier:prettier": "error",
+    // Déclenche un erreur sur l'objet console sauf les methodes "warn" et "error".
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    // Déclenche les erreur quand il n'y a pas de retour de type sur les fonctions.
+    "@typescript-eslint/explicit-function-return-type": ["error"] 
+  }
+}
+```
+
+Liste exaustive des diférentes règles d'ESLint [ici](https://eslint.org/docs/latest/rules/)
+
 
 ## Pourquoi utiliser 🐺 Husky 🐺
 [Remonter au sommaire](#sommaire)
@@ -631,3 +677,10 @@ const makeMeAString = (
 export default makeMeAString;
 
 ```
+
+Il ne reste plus qu'à pousser
+
+```bash
+git push origin <LE_NOM_DE_LA_BRANCHE>
+```
+
