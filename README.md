@@ -58,16 +58,16 @@ On ajoute le tout dans le fichier de configuration d'ESLint:
     "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeature": {
-      "jsx": true,
+      "jsx": true
     }
   },
   "settings": {
     "react": {
-      "version": "detect",
+      "version": "detect"
     },
     "import:/resolver": {
       "node": {
-        "extensions": [".ts", ".tsx"],
+        "extensions": [".ts", ".tsx"]
       } 
     }
   },
@@ -84,7 +84,7 @@ On ajoute le tout dans le fichier de configuration d'ESLint:
     "plugin:prettier/recommended",
     "plugin:sonarjs/recommended",
     "plugin:security/recommended",
-    "plugin:react-hooks/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "rules": {
     // Ce que vous avez réellement besoin.
@@ -92,3 +92,16 @@ On ajoute le tout dans le fichier de configuration d'ESLint:
 }
 ```
 
+On teste le tout avec une commande `yarn lint`
+
+### Installation de 🐺 Husky 🐺
+
+```bash
+yarn add husky -D
+```
+
+Puis on lance Husky
+
+```bash
+npx husky install --yarn
+```
