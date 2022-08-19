@@ -105,3 +105,9 @@ Puis on lance Husky
 ```bash
 npx husky install --yarn
 ```
+
+Ecriture du pre-commit
+
+```bash
+npx husky add .husky/pre-commit "npx tsc --noEmit && eslint --fix . && npx prettier --write ."
+```

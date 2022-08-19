@@ -33,5 +33,10 @@
     "prettier": "^2.7.1",
     "typescript": "4.7.4",
     "sass": "^1.54.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx tsc --noEmit && eslint --fix . && npx prettier --write ."
+    } 
   }
 }
