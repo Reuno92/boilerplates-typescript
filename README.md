@@ -379,7 +379,7 @@ Voir la [🐭 documentation 🐭](https://editorconfig.org/)
 
 ### JetBrains
 ![](https://resources.jetbrains.com/help/img/idea/2022.2/ij_export_editorconfig.png)
-Les IDE jetbrains prennent les options standard mais on crée leur propres options [ici](https://www.jetbrains.com/help/idea/editorconfig.html)
+  *❗ Nécessite le plugin [EditorConfig](https://plugins.jetbrains.com/plugin/7294-editorconfig)*.<br>  Les IDE jetbrains prennent les options standard mais on crée leur propres options [ici](https://www.jetbrains.com/help/idea/editorconfig.html)
 
 ### VSCode
 Il faut télécharger l'extension [ici](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
