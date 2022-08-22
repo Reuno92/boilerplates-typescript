@@ -28,6 +28,9 @@
     "vendor-prefix-align": true,
     "sort-order": [
         [
+            "content"
+        ],
+        [
             "display",
             "visibility",
             "opacity",
@@ -39,7 +42,17 @@
             "-ms-overflow-x",
             "-ms-overflow-y",
             "clip",
-            "zoom",
+            "zoom"
+        ],
+        [
+            "position",
+            "z-index",
+            "top",
+            "right",
+            "bottom",
+            "left"
+        ],
+        [
             "-webkit-align-content",
             "-ms-flex-line-pack",
             "align-content",
@@ -91,34 +104,67 @@
             "order"
         ],
         [
-            "position",
-            "z-index",
-            "top",
-            "right",
-            "bottom",
-            "left"
+            "grid",
+            "grid-area",
+            "grid-auto-columns",
+            "grid-auto-flow",
+            "grid-column",
+            "grid-column-end",
+            "grid-column-gap",
+            "grid-column-start",
+            "grid-gap",
+            "grid-row",
+            "grid-row-end",
+            "grid-row-gap",
+            "grid-row-start",
+            "grid-template",
+            "grid-template-areas",
+            "grid-template-rows",
+            "grid-template-columns",
+            "row-gap",
+            "handling-puctuation"
+        ],
+        [
+            "columns",
+            "column-count",
+            "column-fill",
+            "column-gap",
+            "column-rule",
+            "column-rule-color",
+            "column-rule-style",
+            "column-rule-width",
+            "column-span",
+            "column-width"
         ],
         [
             "-webkit-box-sizing",
             "-moz-box-sizing",
-            "box-sizing",
+            "box-sizing"
+        ],
+        [
             "width",
             "min-width",
             "max-width",
             "height",
             "min-height",
-            "max-height",
+            "max-height"
+        ],
+        [
             "outline",
             "outline",
             "outline-width",
             "outline-style",
             "outline-color",
-            "outline-offset",
+            "outline-offset"
+        ],
+        [
             "margin",
             "margin-top",
             "margin-right",
             "margin-bottom",
-            "margin-left",
+            "margin-left"
+        ],
+        [
             "border",
             "border-width",
             "border-style",
@@ -138,7 +184,9 @@
             "border-left",
             "border-left-width",
             "border-left-style",
-            "border-left-color",
+            "border-left-color"
+        ],
+        [
             "-webkit-border-radius",
             "-moz-border-radius",
             "border-radius",
@@ -153,7 +201,9 @@
             "border-bottom-right-radius",
             "-webkit-border-bottom-left-radius",
             "-moz-border-radius-bottomleft",
-            "border-bottom-left-radius",
+            "border-bottom-left-radius"
+        ],
+        [
             "-webkit-border-image",
             "-moz-border-image",
             "-o-border-image",
@@ -177,7 +227,9 @@
             "-webkit-border-image-repeat",
             "-moz-border-image-repeat",
             "-o-border-image-repeat",
-            "border-image-repeat",
+            "border-image-repeat"
+        ],
+        [
             "padding",
             "padding-top",
             "padding-right",
@@ -185,7 +237,153 @@
             "padding-left"
         ],
         [
-
+            "background",
+            "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader",
+            "background-color",
+            "background-image",
+            "background-repeat",
+            "background-attachment",
+            "background-position",
+            "background-position-x",
+            "-ms-background-position-x",
+            "background-position-y",
+            "-ms-background-position-y",
+            "-webkit-background-clip",
+            "-moz-background-clip",
+            "background-clip",
+            "background-origin",
+            "-webkit-background-size",
+            "-moz-background-size",
+            "-o-background-size",
+            "background-size",
+            "box-decoration-break",
+            "backdrop-filter",
+            "backface-visibility",
+            "background-blend-mode"
+        ],
+        [
+            "-webkit-box-shadow",
+            "-moz-box-shadow",
+            "box-shadow"
+        ],
+        [
+            "font",
+            "font-family",
+            "font-feature-settings",
+            "font-krening",
+            "font-size",
+            "font-weight",
+            "font-style",
+            "font-variant",
+            "font-size-adjust",
+            "font-stretch",
+            "font-effect",
+            "font-emphasize",
+            "font-emphasize-position",
+            "font-emphasize-style",
+            "font-smooth",
+            "line-height"
+        ],
+        [
+            "-webkit-hyphens",
+            "-ms-hyphens",
+            "hyphens",
+            "text-indent",
+            "text-align",
+            "text-align-last",
+            "text-justify",
+            "text-decoration",
+            "text-decoration-color",
+            "text-decoration-line",
+            "text-decoration-style",
+            "text-decoration-thickness",
+            "text-overflow",
+            "vertical-align",
+            "white-space",
+            "word-break",
+            "word-spacing",
+            "word-wrap",
+            "tab-size",
+            "quotes",
+            "direction",
+            "unicode-bidi",
+            "writing-mode"
+        ],
+        [
+            "counter-increment",
+            "counter-reset",
+            "text-transform",
+            "filter:progid:DXImageTransform.Microsoft.gradient",
+            "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient",
+            "text-shadow"
+            
+        ],
+        [
+            "object-fit",
+            "object-position"
+        ],
+        [
+            "table-layout",
+            "empty-cells",
+            "caption-side",
+            "border-spacing",
+            "border-collapse"
+        ],
+        [
+            "list-style",
+            "list-style-position",
+            "list-style-type",
+            "list-style-image"
+        ],
+        [
+            "resize"
+        ],
+        [
+            "carret-color",
+            "cursor",
+            "pointer-events",
+            "user-select"
+        ],
+        [
+            "orphans",
+            "widows",
+            "page-break-after",
+            "page-break-before",
+            "page-break-inside"
+        ],
+        [
+            "transform",
+            "transform-origin",
+            "transform-style",
+            "mix-blend-mode",
+            "filter",
+            "mask-origin",
+            "mask-position",
+            "mask-size",
+            "mask-image",
+            "mask-mode",
+            "mask-repeat",
+            "perspective",
+            "perspective-origin",
+            "scroll-behavior"
+        ],
+        [
+            "transition",
+            "transition-duration",
+            "transition-property",
+            "transition-timing-function"
+        ],
+        [
+            "animation",
+            "animation-delay",
+            "animation-direction",
+            "animation-duration",
+            "animation-fill-mode",
+            "animation-iteration-count",
+            "animation-name",
+            "animation-play-state",
+            "animation-timeline",
+            "animation-timing-function"
         ]
     ]
 }
