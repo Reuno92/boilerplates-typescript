@@ -39,9 +39,10 @@
     "sass": "^1.54.4",
     "typescript": "4.7.4"
   },
+  "browsersList": [">0.3%", "not dead", "not op_mini all"],
   "husky": {
     "hooks": {
-      "pre-commit": "npx tsc --noEmit && npx eslint --fix . && npx prettier --write . && yarn csscomb"
+      "pre-commit": "npx tsc --noEmit && npx eslint --fix . && npx prettier --write . && yarn lint:scss"
     }
   }
 }

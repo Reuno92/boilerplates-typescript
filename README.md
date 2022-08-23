@@ -2,11 +2,19 @@
 
 ## Sommaire
 
-[Démarrage](#démarrage)
-[Procédure](#procédure)
-[NextJS](#1---installation-de-nextjs)
-[Prettier et ESLint](#2---installation-de-prettier-et-eslint)
-[Husky](#3---installation-de-🐺-husky-🐺)
+  - [Démarrage](#démarrage)
+  - [Procédure](#procédure)
+    - [1 - Installation de NextJS](#1---installation-de-nextjs)
+    - [2 - Installation de Prettier et ESLint](#2---installation-de-prettier-et-eslint)
+    - [3 - Installation de 🐺 Husky 🐺](#3---installation-de--husky-)
+    - [Installation de SASS](#installation-de-sass)
+      - [**Empilement**](#empilement)
+      - [**Fichier partiels**](#fichier-partiels)
+      - [**Modules**](#modules)
+      - [**Mixines**](#mixines)
+      - [**Héritage**](#héritage)
+      - [**Operator**](#operator)
+  - [CSSComb](#csscomb)
 
 ## Démarrage
 
@@ -147,7 +155,7 @@ yarn add sass -D
 
 Les règles de style sont la base de Sass, tout comme elles le sont pour CSS. Elles fonctionnent de la même manière : vous choisissez les éléments à styliser à l'aide d'un sélecteur et vous déclarez les propriétés qui affectent l'apparence de ces éléments.
 
-#### Empilement
+#### **Empilement**
 CSS
 ```css
 nav ul {
@@ -387,3 +395,513 @@ aside[role="complementary"] {
 ```
 
 Plus de possibilités dans la documentation [ici](https://sass-lang.com/documentation/).
+
+## CSSComb
+
+CSSComb est un module exxentiellement pour trier les propriétés css il devenu tellement populaire qu'il a été utlisé sur le Framework CSS Facebook Bootstrap 3. Puis est devenu un linter.
+
+Aujourd'hui, le projet d'origine a été abandonné au profit de `csscombjs`. Il a pas beaucoup bougé depuis 2019, le site n'a pas été mis à jour et été migré [Official Website](https://csscomb.herokuapp.com/) qui permet de faire **PARTIELLEMENT** son propre fichier de configuration.
+
+Il permet de garder du code Source SCSS/SASS, le plus propre possible. J'ai personnellement un choix très arrêté pour l'ordre des propriétés CSS. Elle se base à l'origine comme si vous prenez un crayon (pas de stylo, pinceaux etc) et que vous vous mettiez à dessiner avec aussi des ordres de placements venant de certaines conventions. Ca permet **essentiellement** de s'y retrouver parmis les nombreuses propriétés et d'avoir un ordre le plus logique possible.
+
+`csscomb.json`
+```json
+{
+  ...
+      "sort-order": [
+        [
+            /* Contenu
+             * En tête de tableau, souvent utilisé sur les pseudos-élément ::before et ::after
+             * par convention on le laissse en haut. 
+            */
+            "content"
+        ],
+        [
+            /* Nature d'un élement, visibilté, disparu du flux, opacité, supperposition */
+            "display",
+            "visibility",
+            "opacity",
+            "float",
+            "clear",
+            "overflow",
+            "-ms-overflow-x",
+            "-ms-overflow-y",
+            "overflow-x",
+            "overflow-y",
+            "clip",
+            "zoom"
+        ],
+        [
+            /* Positionnements */
+            "position",
+            "z-index",
+            "top",
+            "right",
+            "bottom",
+            "left"
+        ],
+        [
+            /* Flexbox, 
+             * est le utilisé actuellement je pense qu'il est préférable de le mettre devant 
+             */
+            "-webkit-align-content",
+            "-ms-flex-line-pack",
+            "align-content",
+            "-webkit-box-align",
+            "-moz-box-align",
+            "-webkit-align-items",
+            "align-items",
+            "-ms-flex-align",
+            "-webkit-align-self",
+            "-ms-flex-item-align",
+            "-ms-grid-row-align",
+            "align-self",
+            "-webkit-box-flex",
+            "-webkit-flex",
+            "-moz-box-flex",
+            "-ms-flex",
+            "flex",
+            "-webkit-flex-flow",
+            "-ms-flex-flow",
+            "flex-flow",
+            "-webkit-flex-basis",
+            "-ms-flex-preferred-size",
+            "flex-basis",
+            "-webkit-box-orient",
+            "-webkit-box-direction",
+            "-webkit-flex-direction",
+            "-moz-box-orient",
+            "-moz-box-direction",
+            "-ms-flex-direction",
+            "flex-direction",
+            "-webkit-flex-grow",
+            "-ms-flex-positive",
+            "flex-grow",
+            "-webkit-flex-shrink",
+            "-ms-flex-negative",
+            "flex-shrink",
+            "-webkit-flex-wrap",
+            "-ms-flex-wrap",
+            "flex-wrap",
+            "-webkit-box-pack",
+            "-moz-box-pack",
+            "-ms-flex-pack",
+            "-webkit-justify-content",
+            "justify-content",
+            "-webkit-box-ordinal-group",
+            "-webkit-order",
+            "-moz-box-ordinal-group",
+            "-ms-flex-order",
+            "order"
+        ],
+        [
+            /* Grid Layout,
+             * apparu le 17 Sept. 2015 est plus adpaté au colonnage
+             * Avantage:
+             *  - plus facile à utilisé que flexbox.
+             *  - Très bon pour faire des grilles statiques
+             *  - plus facilement gérable avec des @mediaquery.
+             * Défaut: 
+             *  - on ne peut pas déplacé les éléments comme on le souhaite avec des @keyframes.
+             * Déjà testé.
+             */
+            "grid",
+            "grid-area",
+            "grid-auto-columns",
+            "grid-auto-flow",
+            "grid-column",
+            "grid-column-end",
+            "grid-column-gap",
+            "grid-column-start",
+            "grid-gap",
+            "grid-row",
+            "grid-row-end",
+            "grid-row-gap",
+            "grid-row-start",
+            "grid-template",
+            "grid-template-areas",
+            "grid-template-rows",
+            "grid-template-columns",
+            "row-gap",
+            "handling-puctuation"
+        ],
+        [
+          /*
+           *  Multi-Colummn
+           *  Permet de faire des colonnages comme en imprimerie, de gérer les gouttière 'gap'
+           *  et de remplir avec un filet vertical 'column-rule'.
+           */
+            "columns",
+            "column-count",
+            "column-fill",
+            "column-gap",
+            "column-rule",
+            "column-rule-color",
+            "column-rule-style",
+            "column-rule-width",
+            "column-span",
+            "column-width"
+        ],
+        [
+            /*
+             * Modèle de boîte, généralement à éviter de touche sinon ça crée des soucis.
+            */
+            "-webkit-box-sizing",
+            "-moz-box-sizing",
+            "box-sizing"
+        ],
+        [
+            /*
+             *  Les dimensions selon le modèle de boîte
+             */
+            "width",
+            "min-width",
+            "max-width",
+            "height",
+            "min-height",
+            "max-height"
+        ],
+        [
+            /*
+             * Contour, mais spécifique au élément interactif comme les:
+             * Input,
+             * Checkbox (techniquement s'en ai)
+             * Radio (aussi)
+             * Textarea
+             * Bouton
+            */
+            "outline",
+            "outline",
+            "outline-width",
+            "outline-style",
+            "outline-color",
+            "outline-offset"
+        ],
+        [
+            /*
+             * Marge extérieur selon le modèle de boîte
+             */
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left"
+        ],
+        [
+            /* 
+             * Bord selon le modèle de boîte
+             */
+            "border",
+            "border-width",
+            "border-style",
+            "border-color",
+            "border-top",
+            "border-top-width",
+            "border-top-style",
+            "border-top-color",
+            "border-right",
+            "border-right-width",
+            "border-right-style",
+            "border-right-color",
+            "border-bottom",
+            "border-bottom-width",
+            "border-bottom-style",
+            "border-bottom-color",
+            "border-left",
+            "border-left-width",
+            "border-left-style",
+            "border-left-color"
+        ],
+        [
+            /*
+             * J'isole le contour de bord, pour qu'il soit plus facilement repérable.
+            */
+            "-webkit-border-radius",
+            "-moz-border-radius",
+            "border-radius",
+            "-webkit-border-top-left-radius",
+            "-moz-border-radius-topleft",
+            "border-top-left-radius",
+            "-webkit-border-top-right-radius",
+            "-moz-border-radius-topright",
+            "border-top-right-radius",
+            "-webkit-border-bottom-right-radius",
+            "-moz-border-radius-bottomright",
+            "border-bottom-right-radius",
+            "-webkit-border-bottom-left-radius",
+            "-moz-border-radius-bottomleft",
+            "border-bottom-left-radius"
+        ],
+        [
+           /*
+            * Le remplacement des filets technique des bords par une image.
+            */
+            "-webkit-border-image",
+            "-moz-border-image",
+            "-o-border-image",
+            "border-image",
+            "-webkit-border-image-source",
+            "-moz-border-image-source",
+            "-o-border-image-source",
+            "border-image-source",
+            "-webkit-border-image-slice",
+            "-moz-border-image-slice",
+            "-o-border-image-slice",
+            "border-image-slice",
+            "-webkit-border-image-width",
+            "-moz-border-image-width",
+            "-o-border-image-width",
+            "border-image-width",
+            "-webkit-border-image-outset",
+            "-moz-border-image-outset",
+            "-o-border-image-outset",
+            "border-image-outset",
+            "-webkit-border-image-repeat",
+            "-moz-border-image-repeat",
+            "-o-border-image-repeat",
+            "border-image-repeat"
+        ],
+        [
+            /*
+             * La marge intérieur selon le modèle de boîte. 
+             * En respectant, cette ordre il est plus aisé de se représenter 
+             * le modèles de boîte mentalement depuis l'extérieur vers l'intérieur. 
+            */
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left"
+        ],
+        [
+            /*
+             * Le fond de notre élément.
+            */
+            "background",
+            "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader",
+            "background-color",
+            "background-image",
+            "background-repeat",
+            "background-attachment",
+            "background-position",
+            "background-position-x",
+            "-ms-background-position-x",
+            "background-position-y",
+            "-ms-background-position-y",
+            "-webkit-background-clip",
+            "-moz-background-clip",
+            "background-clip",
+            "background-origin",
+            "-webkit-background-size",
+            "-moz-background-size",
+            "-o-background-size",
+            "background-size",
+            "box-decoration-break",
+            "backdrop-filter", // Les effets sur le fond de la boite: blur, brightness, drop-shadow, opacity, sans toucher au contenu.
+            "backface-visibility", // Un peu claqué au sol fait disparaître les élément dessous. A activer pour mon consommé de ressource.
+            "background-blend-mode" // Permet d'appliquer des filtres exactement comme les modes de fusion de Photoshop.
+        ],
+        [
+            /* J'isole volontairement l'effet d'ombré il ne modifie pas le modèle de boîte du flux HTML */
+            "-webkit-box-shadow",
+            "-moz-box-shadow",
+            "box-shadow"
+        ],
+        [
+           /*
+            * La typo,
+            * à partir d'ici on commence à éditer le contenu de l'élément.
+           */
+            "font",
+            "font-family",
+            "font-feature-settings",
+            "font-krening",
+            "font-size",
+            "font-weight",
+            "font-style",
+            "font-variant",
+            "font-size-adjust",
+            "font-stretch",
+            "font-smooth",
+            "line-height"
+        ],
+        [
+            /*
+             * Manipulation du texte,
+             * sur l'enssemble d'un élement balise ou d'un sous-élément spécifique.
+             * En principe ne cassse pas le modèle de boîte. 
+            */
+            "-webkit-hyphens",
+            "-ms-hyphens",
+            "hyphens",
+            "text-indent",
+            "text-align",
+            "text-align-last",
+            "text-justify",
+            "text-decoration",
+            "text-decoration-color",
+            "text-decoration-line",
+            "text-decoration-style",
+            "text-decoration-thickness",
+            "text-emphasis",
+            "text-emphasis-position",
+            "texte-emphasis-style",
+            "text-overflow",
+            "vertical-align",
+            "white-space",
+            "word-break",
+            "word-spacing",
+            "word-wrap",
+            "tab-size",
+            "quotes",
+            "direction",
+            "unicode-bidi",
+            "writing-mode"
+        ],
+        [
+            /*
+             * Effet spécifique sur le texte, increment, les transformations de texte et ombre portée.
+            */
+            "counter-increment", // Créer une incrémentation sur tous les élément spécifique d'un document.
+            "counter-reset", // Permet une remise à zéro de l'incrémentation.
+            /* 
+               Capitalize, Uppercase Lowercase etc. En français, on voit pas une grand différence.
+               en Allemand les 'ß' devient SS en Majuscules,
+               en Néerlandais, le digraphe ij devient IJ, y compris avec 'capitalize'. ex: ijsvrij yoghurt (Yaourt sans glace :) ) devient IJsvrij Yoghurt.
+               en grecque, les voyelles perdent leur accent lorsque tout le mot est en capitale: ά => A sauf quelques exceptions.
+            */ 
+            "text-transform", 
+            "filter:progid:DXImageTransform.Microsoft.gradient",
+            "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient",
+            "text-shadow"
+        ],
+        [
+            /*
+             * Gestion du contenu des images et video.
+             * Un peu comme les background-image, background-position, background-size.
+            */
+            "object-fit",
+            "object-position"
+        ],
+        [
+            /*
+             * Gestion des tableaux
+            */
+            "table-layout",
+            "empty-cells",
+            "caption-side",
+            "border-spacing",
+            "border-collapse"
+        ],
+        [
+            /*
+             * Gestion des listes
+            */
+            "list-style",
+            "list-style-position",
+            "list-style-type",
+            "list-style-image"
+        ],
+        [
+            /*
+             * Gestion spéfique des élément interactifs
+            */
+            "resize"
+        ],
+        [
+            /*
+             * Gestion des différents pointeurs 
+            */
+            "carret-color", // Pointeur quand on écrit.
+            "cursor", // Changer le pointeur par defaut.
+            "pointer-events", // Laisser en auto.
+            /* 'all', un clic sélectionne tout le texte;
+             * 'text', un clic sélectionne un mot, deux clic sélectionne le paragraphe;
+             * 'none', impossible de selectionner.
+             *  Sinon laisser an auto. 
+             */
+            "user-select" 
+        ],
+        [ 
+            /*
+             * Propriété CSS essentiellement utilisé pour le Print.
+             * à Utilisé avec media Query 
+             * @media (print) {  }  
+            */
+
+            /*
+             * Orphelins, termes pour désigner la ligne qui passe tout seul sur une autre colonne ou page.
+             * Valeur numérique attendu, laisser à 2 minimun mais le mieux reste 3 à 5.
+             * C'est une solution cache misère.
+             */ 
+            "orphans",
+            /*
+             * Veuves, termes pour désigner les lignes qui qui sont rester sur la page, colonnes précédentes.
+             * Valeur numérique attendu, laisser à 2, parque une ligne c'est pas très heureux...
+             * C'est aussi une solution cache misère.
+            */
+            "widows",
+            /*
+             * Saut de page, de créer automatiquement des sauts de pages
+             * avec un élément parent sur tous ses enfants si un coupure
+             * intervient.  
+            */
+            "page-break-after",
+            "page-break-before",
+            "page-break-inside"
+        ],
+        [
+            /*
+             * Les transformations, déformation, filtres et les masques
+             * Ultra casse-gueule quand on s'est pas trop ce que l'on fait.
+             * mask étant la seul spec. qui n'a pas de super-propriété.
+            */
+            "transform",
+            "transform-origin",
+            "transform-style",
+            "mix-blend-mode",
+            "filter",
+            "mask-origin",
+            "mask-position",
+            "mask-size",
+            "mask-image",
+            "mask-mode",
+            "mask-repeat",
+            "perspective",
+            "perspective-origin",
+            "scroll-behavior"
+        ],
+        [
+            /*
+             * Transition, entre les états d'un élément
+             * par exemple: hover, focus, active, visited, target 
+             *
+            */
+            "transition",
+            "transition-duration",
+            "transition-property",
+            "transition-timing-function"
+        ],
+        [
+            /*
+             * Animation pur à utiliser conjointement avec les @keyframes 
+             * Compliqué quand on maîtrise pas.
+            */
+            "animation",
+            "animation-delay",
+            "animation-direction",
+            "animation-duration",
+            "animation-fill-mode",
+            "animation-iteration-count",
+            "animation-name",
+            "animation-play-state",
+            "animation-timeline",
+            "animation-timing-function"
+        ]
+    ]
+}
+```
+> ## Note à propos de CSSComb
+> Il subsiste des linefeeds avec csscomb quand on groupe les propriétés avec un tbbleau à deux dimension.
+> Qui est génant selon **les goûts des gens** qui aime pas **avoir de petites roues sur leur bicyclette**. 
+> Pour l'éviter, il suffit de faire un tableau à une dimension. 

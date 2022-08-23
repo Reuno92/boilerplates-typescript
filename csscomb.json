@@ -30,10 +30,7 @@
     "unitless-zero": true,
     "vendor-prefix-align": true,
     "sort-order": [
-        [
-            "content"
-        ],
-        [
+            "content",
             "display",
             "visibility",
             "opacity",
@@ -45,17 +42,13 @@
             "overflow-x",
             "overflow-y",
             "clip",
-            "zoom"
-        ],
-        [
+            "zoom",
             "position",
             "z-index",
             "top",
             "right",
             "bottom",
-            "left"
-        ],
-        [
+            "left",
             "-webkit-align-content",
             "-ms-flex-line-pack",
             "align-content",
@@ -104,9 +97,7 @@
             "-webkit-order",
             "-moz-box-ordinal-group",
             "-ms-flex-order",
-            "order"
-        ],
-        [
+            "order",
             "grid",
             "grid-area",
             "grid-auto-columns",
@@ -125,9 +116,7 @@
             "grid-template-rows",
             "grid-template-columns",
             "row-gap",
-            "handling-puctuation"
-        ],
-        [
+            "handling-puctuation",
             "columns",
             "column-count",
             "column-fill",
@@ -137,37 +126,27 @@
             "column-rule-style",
             "column-rule-width",
             "column-span",
-            "column-width"
-        ],
-        [
+            "column-width",
             "-webkit-box-sizing",
             "-moz-box-sizing",
-            "box-sizing"
-        ],
-        [
+            "box-sizing",
             "width",
             "min-width",
             "max-width",
             "height",
             "min-height",
-            "max-height"
-        ],
-        [
+            "max-height",
             "outline",
             "outline",
             "outline-width",
             "outline-style",
             "outline-color",
-            "outline-offset"
-        ],
-        [
+            "outline-offset",
             "margin",
             "margin-top",
             "margin-right",
             "margin-bottom",
-            "margin-left"
-        ],
-        [
+            "margin-left",
             "border",
             "border-width",
             "border-style",
@@ -187,9 +166,7 @@
             "border-left",
             "border-left-width",
             "border-left-style",
-            "border-left-color"
-        ],
-        [
+            "border-left-color",
             "-webkit-border-radius",
             "-moz-border-radius",
             "border-radius",
@@ -204,9 +181,7 @@
             "border-bottom-right-radius",
             "-webkit-border-bottom-left-radius",
             "-moz-border-radius-bottomleft",
-            "border-bottom-left-radius"
-        ],
-        [
+            "border-bottom-left-radius",
             "-webkit-border-image",
             "-moz-border-image",
             "-o-border-image",
@@ -230,16 +205,12 @@
             "-webkit-border-image-repeat",
             "-moz-border-image-repeat",
             "-o-border-image-repeat",
-            "border-image-repeat"
-        ],
-        [
+            "border-image-repeat",
             "padding",
             "padding-top",
             "padding-right",
             "padding-bottom",
-            "padding-left"
-        ],
-        [
+            "padding-left",
             "background",
             "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader",
             "background-color",
@@ -262,14 +233,10 @@
             "box-decoration-break",
             "backdrop-filter",
             "backface-visibility",
-            "background-blend-mode"
-        ],
-        [
+            "background-blend-mode",
             "-webkit-box-shadow",
             "-moz-box-shadow",
-            "box-shadow"
-        ],
-        [
+            "box-shadow",
             "font",
             "font-family",
             "font-feature-settings",
@@ -281,13 +248,8 @@
             "font-size-adjust",
             "font-stretch",
             "font-effect",
-            "font-emphasize",
-            "font-emphasize-position",
-            "font-emphasize-style",
             "font-smooth",
-            "line-height"
-        ],
-        [
+            "line-height",
             "-webkit-hyphens",
             "-ms-hyphens",
             "hyphens",
@@ -300,6 +262,9 @@
             "text-decoration-line",
             "text-decoration-style",
             "text-decoration-thickness",
+            "text-emphasis",
+            "text-emphasis-position",
+            "text-emphasis-style",
             "text-overflow",
             "vertical-align",
             "white-space",
@@ -310,51 +275,35 @@
             "quotes",
             "direction",
             "unicode-bidi",
-            "writing-mode"
-        ],
-        [
+            "writing-mode",
             "counter-increment",
             "counter-reset",
             "text-transform",
             "filter:progid:DXImageTransform.Microsoft.gradient",
             "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient",
             "text-shadow"
-            
-        ],
-        [
+            ,
             "object-fit",
-            "object-position"
-        ],
-        [
+            "object-position",
             "table-layout",
             "empty-cells",
             "caption-side",
             "border-spacing",
-            "border-collapse"
-        ],
-        [
+            "border-collapse",
             "list-style",
             "list-style-position",
             "list-style-type",
-            "list-style-image"
-        ],
-        [
-            "resize"
-        ],
-        [
+            "list-style-image",
+            "resize",
             "carret-color",
             "cursor",
             "pointer-events",
-            "user-select"
-        ],
-        [
+            "user-select",
             "orphans",
             "widows",
             "page-break-after",
             "page-break-before",
-            "page-break-inside"
-        ],
-        [
+            "page-break-inside",
             "transform",
             "transform-origin",
             "transform-style",
@@ -368,15 +317,11 @@
             "mask-repeat",
             "perspective",
             "perspective-origin",
-            "scroll-behavior"
-        ],
-        [
+            "scroll-behavior",
             "transition",
             "transition-duration",
             "transition-property",
-            "transition-timing-function"
-        ],
-        [
+            "transition-timing-function",
             "animation",
             "animation-delay",
             "animation-direction",
@@ -387,6 +332,5 @@
             "animation-play-state",
             "animation-timeline",
             "animation-timing-function"
-        ]
     ]
 }

@@ -1,151 +1,127 @@
 .container {
-    padding: 0 2rem;
+  padding : 0 2rem;
 }
 
 .main {
-    display: flex;
-
-    align-items: center;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-
-    min-height: 100vh;
-
-    padding: 4rem 0;
+  display : flex;
+  align-items : center;
+  flex : 1;
+  flex-direction : column;
+  justify-content : center;
+  min-height : 100vh;
+  padding : 4rem 0;
 }
 
 .footer {
-    display: flex;
-
-    align-items: center;
-    flex: 1;
-    justify-content: center;
-
-    border-top: 1px solid #eaeaea;
-
-    padding: 2rem 0;
-    & a {
-        display: flex;
-
-        align-items: center;
-        flex-grow: 1;
-        justify-content: center;
-    }
+  display : flex;
+  align-items : center;
+  flex : 1;
+  justify-content : center;
+  border-top : 1px solid #eaeaea;
+  padding : 2rem 0;
+  & a {
+    display : flex;
+    align-items : center;
+    flex-grow : 1;
+    justify-content : center;
+  }
 }
 
 .title {
-    margin: 0;
+  margin : 0;
+  font-size : 4rem;
+  line-height : 1.15;
+  & a {
+    text-decoration : none;
 
-    font-size: 4rem;
-    line-height: 1.15;
-    & a {
-        text-decoration: none;
-
-        color: #0070f3;
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: underline;
-        }
+    color : #0070f3;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration : underline;
     }
+  }
 }
 
 .title,
 .description {
-    text-align: center;
+  text-align : center;
 }
 
 .description {
-    margin: 4rem 0;
-
-    font-size: 1.5rem;
-    line-height: 1.5;
+  margin : 4rem 0;
+  font-size : 1.5rem;
+  line-height : 1.5;
 }
 
 .code {
-    border-radius: 5px;
-
-    padding: .75rem;
-
-    background: #fafafa;
-
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-    font-size: 1.1rem;
+  border-radius : 5px;
+  padding : .75rem;
+  background : #fafafa;
+  font-family : Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  font-size : 1.1rem;
 }
 
 .grid {
-    display: flex;
-
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    max-width: 800px;
+  display : flex;
+  align-items : center;
+  flex-wrap : wrap;
+  justify-content : center;
+  max-width : 800px;
 }
 
 .card {
-    max-width: 300px;
+  max-width : 300px;
+  margin : 1rem;
+  border : 1px solid #eaeaea;
+  border-radius : 10px;
+  padding : 1.5rem;
+  text-align : left;
+  text-decoration : none;
+  transition : color .15s ease, border-color .15s ease;
 
-    margin: 1rem;
+  color : inherit;
+  &:hover,
+  &:focus,
+  &:active {
+    border-color : #0070f3;
 
-    border: 1px solid #eaeaea;
+    color : #0070f3;
+  }
 
-    border-radius: 10px;
+  & h2 {
+    margin : 0 0 1rem 0;
+    font-size : 1.5rem;
+  }
 
-    padding: 1.5rem;
-
-    text-align: left;
-    text-decoration: none;
-
-    transition: color .15s ease, border-color .15s ease;
-
-    color: inherit;
-    &:hover,
-    &:focus,
-    &:active {
-        border-color: #0070f3;
-
-        color: #0070f3;
-    }
-
-    & h2 {
-        margin: 0 0 1rem 0;
-
-        font-size: 1.5rem;
-    }
-
-    & p {
-        margin: 0;
-
-        font-size: 1.25rem;
-        line-height: 1.5;
-    }
+  & p {
+    margin : 0;
+    font-size : 1.25rem;
+    line-height : 1.5;
+  }
 }
 
 .logo {
-    height: 1em;
-
-    margin-left: .5rem;
+  height : 1em;
+  margin-left : .5rem;
 }
 
 @media (max-width: 600px) {
-    .grid {
-        flex-direction: column;
-
-        width: 100%;
-    }
+  .grid {
+    flex-direction : column;
+    width : 100%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    .card,
-    .footer {
-        border-color: #222;
-    }
-    .code {
-        background: #111;
-    }
-    .logo img {
-        filter: invert(1);
-    }
+  .card,
+  .footer {
+    border-color : #222222;
+  }
+  .code {
+    background : #111111;
+  }
+  .logo img {
+    filter : invert(1);
+  }
 }
