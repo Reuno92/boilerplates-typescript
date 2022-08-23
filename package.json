@@ -1,13 +1,15 @@
 {
   "name": "share-dev-meta-info-1",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:style": "csscomb pages/styles",
+    "lint:scss": "csscomb -v ./styles -c ./csscomb.json --lint",
+    "lint:scss:fix": "csscomb -v ./styles -c ./csscomb.json",
     "prepare": "husky install"
   },
   "dependencies": {
