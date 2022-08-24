@@ -7,13 +7,13 @@
     - [1 - Installation de NextJS](#1---installation-de-nextjs)
     - [2 - Installation de Prettier et ESLint](#2---installation-de-prettier-et-eslint)
     - [3 - Installation de 🐺 Husky 🐺](#3---installation-de--husky-)
-    - [Installation de SASS](#installation-de-sass)
-      - [**Empilement**](#empilement)
-      - [**Fichier partiels**](#fichier-partiels)
-      - [**Modules**](#modules)
-      - [**Mixines**](#mixines)
-      - [**Héritage**](#héritage)
-      - [**Operator**](#operator)
+    - [4 - Installation de SASS](#installation-de-sass)
+      - [Empilement](#empilement)
+      - [Fichier partiels](#fichier-partiels)
+      - [Modules](#modules)
+      - [Mixines](#mixines)
+      - [Héritage](#héritage)
+      - [Operator](#operator)
   - [CSSComb](#csscomb)
 
 ## Démarrage
@@ -147,7 +147,7 @@ git add . && git commit -m "test(Husky) Test pre-commit"
 > Si vous avez respecté la procédure et correctemment écrit votre code vous ne devriez pas avoir de message.
 > Ne fonctionne pas si vous créer pas le script prepare...
 
-### Installation de SASS
+### 4 - Pré-processeur de SASS
 
 ```bash
 yarn add sass -D
@@ -156,6 +156,8 @@ yarn add sass -D
 Les règles de style sont la base de Sass, tout comme elles le sont pour CSS. Elles fonctionnent de la même manière : vous choisissez les éléments à styliser à l'aide d'un sélecteur et vous déclarez les propriétés qui affectent l'apparence de ces éléments.
 
 #### **Empilement**
+<div style="columns: 2">
+
 CSS
 ```css
 nav ul {
@@ -193,6 +195,8 @@ nav {
 }
 ```
 
+</div>
+
 > # Avertissement de la documentation
 > Les règles imbriquées sont très utiles, mais elles peuvent aussi rendre difficile la visualisation de la quantité de CSS que vous générez réellement. Plus l'imbrication est profonde, plus la bande passante nécessaire pour servir votre CSS est importante et plus le navigateur a besoin de travail pour le rendre. Gardez ces sélecteurs peu profonds !<br>
 > Dans les fait, en prod, on peut transpiler le tout pour faire un ou des fichiers css natif:
@@ -208,6 +212,8 @@ Vous pouvez créer des fichiers Sass partiels contenant de petits fragments de C
 #### **Modules**
 
 Vous n'êtes pas obligé d'écrire tout votre Sass dans un seul fichier. Vous pouvez le diviser comme bon vous semble avec la règle @use. Cette règle charge un autre fichier Sass comme un module, ce qui signifie que vous pouvez faire référence à ses variables, mixins et fonctions dans votre fichier Sass avec un espace de nom basé sur le nom du fichier. L'utilisation d'un fichier inclut également le CSS qu'il génère dans votre sortie compilée !
+
+<div style="columns: 2">
 
 `_base.scss`
 ```scss
@@ -229,6 +235,8 @@ body {
   color: white;
 }
 ```
+</div>
+
 
 Donne en CSS
 ```css
@@ -361,6 +369,8 @@ Il est très utile de faire des mathématiques dans votre CSS. Sass dispose d'un
 
 > En css, il existe une valeur calc() bien moins pratique, puisque ça force le navigateur a faire le calcul lui-même du coup peut ralentir les smartphones.
 
+<div style="columns: 2;">
+
 SCSS
 ```scss
 @use "sass:math";
@@ -378,6 +388,7 @@ aside[role="complementary"] {
   margin-left: auto;
 }
 ```
+
 CSS
 ```css
 .container {
@@ -393,6 +404,8 @@ aside[role="complementary"] {
   margin-left: auto;
 }
 ```
+
+</div>
 
 Plus de possibilités dans la documentation [ici](https://sass-lang.com/documentation/).
 
@@ -901,6 +914,7 @@ Il permet de garder du code Source SCSS/SASS, le plus propre possible. J'ai pers
     ]
 }
 ```
+
 > ## Note à propos de CSSComb
 > Il subsiste des linefeeds avec csscomb quand on groupe les propriétés avec un tbbleau à deux dimension.
 > Qui est génant selon **les goûts des gens** qui aime pas **avoir de petites roues sur leur bicyclette**. 
