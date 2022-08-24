@@ -7,7 +7,7 @@
     - [1 - Installation de NextJS](#1---installation-de-nextjs)
     - [2 - Installation de Prettier et ESLint](#2---installation-de-prettier-et-eslint)
     - [3 - Installation de 🐺 Husky 🐺](#3---installation-de--husky-)
-    - [4 - Installation de SASS](#installation-de-sass)
+    - [4 - Installation de SASS](#4---pr-processeur-de-sass)
       - [Empilement](#empilement)
       - [Fichier partiels](#fichier-partiels)
       - [Modules](#modules)
