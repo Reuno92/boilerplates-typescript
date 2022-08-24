@@ -12,7 +12,7 @@
       - [Fichier partiels](#fichier-partiels)
       - [Modules](#modules)
       - [Mixines](#mixines)
-      - [Héritage](#héritage)
+      - [Héritage](#hritage)
       - [Operator](#operator)
   - [CSSComb](#csscomb)
 
@@ -23,7 +23,7 @@ yarn
 ```
 
 ## Procédure
-
+[Retour au sommaire](#sommaire)
 ### 1 - Installation de NextJS
 
 Si vous êtes déjà dans un dossier de travail
@@ -39,7 +39,7 @@ yarn create next-app --typescript <NOM_DE_DOSSIER>
 ```
 
 ### 2 - Installation de Prettier et ESLint
-
+[Retour au sommaire](#sommaire)
 ```bash
 yarn add eslint prettier -D
 ```
@@ -51,7 +51,7 @@ yarn add @typescript-eslint/{eslint-plugin,parser} eslint-config-{airbnb,prettie
 ```
 
 |                                  Nom | Description                                                                                                                                       | Lien                                                                                  |
-| -----------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------ |
+|-------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|
 | @typescript-eslint/**eslint-plugin** | Un plugin ESLint qui fournit des règles lint pour les bases de code TypeScript.                                                                   |                                                                                       |
 |        @typescript-eslint/**parser** | Un analyseur ESLint qui exploite TypeScript ESTree pour permettre à ESLint de lint le code source TypeScript.                                     |                                                                                       |
 |             eslint-config-**airbnb** | Configuration partagée fournit par le .eslintrc d'Airnbnb                                                                                         | [Doc](https://github.com/airbnb/javascript)                                           |
@@ -113,7 +113,7 @@ On ajoute le tout dans le fichier de configuration d'ESLint:
 On teste le tout avec une commande `yarn lint`
 
 ### 3 - Installation de 🐺 Husky 🐺
-
+[Retour au sommaire](#sommaire)
 ```bash
 yarn add husky -D
 ```
@@ -148,7 +148,7 @@ git add . && git commit -m "test(Husky) Test pre-commit"
 > Ne fonctionne pas si vous créer pas le script prepare...
 
 ### 4 - Pré-processeur de SASS
-
+[Retour au sommaire](#sommaire)
 ```bash
 yarn add sass -D
 ```
@@ -156,6 +156,7 @@ yarn add sass -D
 Les règles de style sont la base de Sass, tout comme elles le sont pour CSS. Elles fonctionnent de la même manière : vous choisissez les éléments à styliser à l'aide d'un sélecteur et vous déclarez les propriétés qui affectent l'apparence de ces éléments.
 
 #### **Empilement**
+[Retour au sommaire](#sommaire)
 <div style="columns: 2">
 
 CSS
@@ -206,11 +207,11 @@ nav {
 > ```
 
 #### **Fichier partiels**
-
+[Retour au sommaire](#sommaire)
 Vous pouvez créer des fichiers Sass partiels contenant de petits fragments de CSS que vous pouvez inclure dans d'autres fichiers Sass. C'est un excellent moyen de modulariser votre CSS et d'en faciliter la maintenance. Un fichier partiel est un fichier Sass nommé avec un underscore. Vous pouvez le nommer comme `_partial.scss`. Le trait de soulignement indique à Sass que le fichier n'est qu'un fichier partiel et qu'il ne doit pas être généré dans un fichier CSS. Les partiels de Sass sont utilisés avec la règle `@use`.
 
 #### **Modules**
-
+[Retour au sommaire](#sommaire)
 Vous n'êtes pas obligé d'écrire tout votre Sass dans un seul fichier. Vous pouvez le diviser comme bon vous semble avec la règle @use. Cette règle charge un autre fichier Sass comme un module, ce qui signifie que vous pouvez faire référence à ses variables, mixins et fonctions dans votre fichier Sass avec un espace de nom basé sur le nom du fichier. L'utilisation d'un fichier inclut également le CSS qu'il génère dans votre sortie compilée !
 
 <div style="columns: 2">
@@ -252,6 +253,7 @@ body {
 ```
 
 #### **Mixines** 
+[Retour au sommaire](#sommaire)
 En réalité des functions
 
 Certaines choses en CSS sont un peu fastidieuses à écrire, surtout avec CSS3 et les nombreux préfixes de moteur de navigateur qui existent. Un mixin vous permet de créer des groupes de déclarations CSS que vous souhaitez réutiliser dans votre site. Cela vous aide à garder votre Sass très DRY. Vous pouvez même passer des valeurs pour rendre votre mixin plus flexible.
@@ -296,6 +298,7 @@ Donne en CSS
 ```
 
 #### **Héritage**
+[Retour au sommaire](#sommaire)
 L'utilisation de @extend vous permet de partager un ensemble de propriétés CSS d'un sélecteur à un autre. Dans notre exemple, nous allons créer une série simple de messages pour les erreurs, les avertissements et les réussites en utilisant une autre fonctionnalité qui va de pair avec extend, les classes placeholder. Une classe de type placeholder est un type spécial de classe qui ne s'imprime que lorsqu'elle est étendue, et peut vous aider à garder votre CSS compilé propre et net.
 
 ```scss
@@ -364,7 +367,7 @@ L'utilisation de @extend vous permet de partager un ensemble de propriétés CSS
 
 
 #### **Operator**
-
+[Retour au sommaire](#sommaire)
 Il est très utile de faire des mathématiques dans votre CSS. Sass dispose d'une poignée d'opérateurs mathématiques standard comme +, -, *, math.div() et %. Dans notre exemple, nous allons faire quelques calculs mathématiques simples pour calculer la largeur d'un article et d'un côté.
 
 > En css, il existe une valeur calc() bien moins pratique, puisque ça force le navigateur a faire le calcul lui-même du coup peut ralentir les smartphones.
