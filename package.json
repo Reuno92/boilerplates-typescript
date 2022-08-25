@@ -10,6 +10,8 @@
     "lint": "next lint",
     "lint:scss": "csscomb -v ./styles -c ./csscomb.json --lint",
     "lint:scss:fix": "csscomb -v ./styles -c ./csscomb.json",
+    "lint:all": "yarn lint && yarn:scss",
+    "lint:all:fix": "yarn lint --fix && yarn lint:scss:fix",
     "prepare": "husky install"
   },
   "dependencies": {

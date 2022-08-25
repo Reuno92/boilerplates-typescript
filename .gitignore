@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Debug Configuration
+!.idea/
+.idea/*
+!.idea/runConfigurations/
