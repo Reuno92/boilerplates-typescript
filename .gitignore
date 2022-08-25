@@ -8,6 +8,11 @@
 # testing
 /coverage
 
+# static assets come from Cypress testing
+*.mp4
+cypress/screenshots/**/*
+cypress/videos/**/*
+
 # next.js
 /.next/
 /out/
@@ -17,6 +22,7 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
 
 # debug

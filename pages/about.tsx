@@ -1,9 +1,10 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-/* eslint-disable react/function-component-definition */
-const Home: NextPage = () => {
+import type { NextPage } from 'next';
+
+// eslint-disable-next-line react/function-component-definition
+const About: NextPage = () => {
   return (
     <>
       <Head>
@@ -16,16 +17,22 @@ const Home: NextPage = () => {
           rel="icon"
           href="/favicon.ico"
         />
+        <link
+          rel="stylesheet"
+          href="https://rsms.me/linter/linter.css"
+        />
       </Head>
 
       <nav>
-        <Link href="/about">
-          <a>About</a>
+        <Link href="/">
+          <a>Home</a>
         </Link>
       </nav>
+
       <main>
-        <h1>Home Page</h1>
+        <h1>About Page</h1>
       </main>
+
       <footer>
         <p>Footer</p>
       </footer>
@@ -33,4 +40,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default About;

@@ -23,7 +23,7 @@ yarn
 ```
 
 ## Procédure
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 ### 1 - Installation de NextJS
 
 Si vous êtes déjà dans un dossier de travail
@@ -39,7 +39,7 @@ yarn create next-app --typescript <NOM_DE_DOSSIER>
 ```
 
 ### 2 - Installation de Prettier et ESLint
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 ```bash
 yarn add eslint prettier -D
 ```
@@ -113,7 +113,7 @@ On ajoute le tout dans le fichier de configuration d'ESLint:
 On teste le tout avec une commande `yarn lint`
 
 ### 3 - Installation de 🐺 Husky 🐺
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 ```bash
 yarn add husky -D
 ```
@@ -148,7 +148,7 @@ git add . && git commit -m "test(Husky) Test pre-commit"
 > Ne fonctionne pas si vous créer pas le script prepare...
 
 ### 4 - Pré-processeur de SASS
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 ```bash
 yarn add sass -D
 ```
@@ -156,7 +156,7 @@ yarn add sass -D
 Les règles de style sont la base de Sass, tout comme elles le sont pour CSS. Elles fonctionnent de la même manière : vous choisissez les éléments à styliser à l'aide d'un sélecteur et vous déclarez les propriétés qui affectent l'apparence de ces éléments.
 
 #### **Empilement**
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 <div style="columns: 2">
 
 CSS
@@ -207,11 +207,11 @@ nav {
 > ```
 
 #### **Fichier partiels**
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 Vous pouvez créer des fichiers Sass partiels contenant de petits fragments de CSS que vous pouvez inclure dans d'autres fichiers Sass. C'est un excellent moyen de modulariser votre CSS et d'en faciliter la maintenance. Un fichier partiel est un fichier Sass nommé avec un underscore. Vous pouvez le nommer comme `_partial.scss`. Le trait de soulignement indique à Sass que le fichier n'est qu'un fichier partiel et qu'il ne doit pas être généré dans un fichier CSS. Les partiels de Sass sont utilisés avec la règle `@use`.
 
 #### **Modules**
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 Vous n'êtes pas obligé d'écrire tout votre Sass dans un seul fichier. Vous pouvez le diviser comme bon vous semble avec la règle @use. Cette règle charge un autre fichier Sass comme un module, ce qui signifie que vous pouvez faire référence à ses variables, mixins et fonctions dans votre fichier Sass avec un espace de nom basé sur le nom du fichier. L'utilisation d'un fichier inclut également le CSS qu'il génère dans votre sortie compilée !
 
 <div style="columns: 2">
@@ -253,7 +253,7 @@ body {
 ```
 
 #### **Mixines** 
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 En réalité des functions
 
 Certaines choses en CSS sont un peu fastidieuses à écrire, surtout avec CSS3 et les nombreux préfixes de moteur de navigateur qui existent. Un mixin vous permet de créer des groupes de déclarations CSS que vous souhaitez réutiliser dans votre site. Cela vous aide à garder votre Sass très DRY. Vous pouvez même passer des valeurs pour rendre votre mixin plus flexible.
@@ -298,7 +298,7 @@ Donne en CSS
 ```
 
 #### **Héritage**
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 L'utilisation de @extend vous permet de partager un ensemble de propriétés CSS d'un sélecteur à un autre. Dans notre exemple, nous allons créer une série simple de messages pour les erreurs, les avertissements et les réussites en utilisant une autre fonctionnalité qui va de pair avec extend, les classes placeholder. Une classe de type placeholder est un type spécial de classe qui ne s'imprime que lorsqu'elle est étendue, et peut vous aider à garder votre CSS compilé propre et net.
 
 ```scss
@@ -367,7 +367,7 @@ L'utilisation de @extend vous permet de partager un ensemble de propriétés CSS
 
 
 #### **Operator**
-[Retour au sommaire](#sommaire)
+[Retour au sommaire](#sommaire)<br>
 Il est très utile de faire des mathématiques dans votre CSS. Sass dispose d'une poignée d'opérateurs mathématiques standard comme +, -, *, math.div() et %. Dans notre exemple, nous allons faire quelques calculs mathématiques simples pour calculer la largeur d'un article et d'un côté.
 
 > En css, il existe une valeur calc() bien moins pratique, puisque ça force le navigateur a faire le calcul lui-même du coup peut ralentir les smartphones.
@@ -412,7 +412,7 @@ aside[role="complementary"] {
 
 Plus de possibilités dans la documentation [ici](https://sass-lang.com/documentation/).
 
-## CSSComb
+### 5 - CSSComb
 
 CSSComb est un module exxentiellement pour trier les propriétés css il devenu tellement populaire qu'il a été utlisé sur le Framework CSS Facebook Bootstrap 3. Puis est devenu un linter.
 
@@ -922,3 +922,35 @@ Il permet de garder du code Source SCSS/SASS, le plus propre possible. J'ai pers
 > Il subsiste des linefeeds avec csscomb quand on groupe les propriétés avec un tbbleau à deux dimension.
 > Qui est génant selon **les goûts des gens** qui aime pas **avoir de petites roues sur leur bicyclette**. 
 > Pour l'éviter, il suffit de faire un tableau à une dimension. 
+
+### 6 - Test unitaire et test bout-en-bout
+
+```bash
+yarn add jest ts-jest @types/jest \ 
+eslint-plugin-jest-dom @testing-library/{jest-dom,react} @types/testing-library__jest-dom \
+@typescript-eslint/eslint-plugin \
+cypress  -D
+```
+
+|                             Name | Description                                                                                               | Lien                                                                                             |
+|---------------------------------:|:----------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
+|                             jest | Fast interactive mode can switch between running all tests or only test files related to changed files.   | [site](https://jestjs.io/), [doc](https://jestjs.io/docs/getting-started)                        |
+|                          ts-jest | A Jest transformer with source map support that lets you use Jest to test projects written in TypeScript. | [site](https://kulshekhar.github.io/ts-jest/), [doc](https://kulshekhar.github.io/ts-jest/docs/) |
+|           eslint-plugin-jest-dom | ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom.   | [repo](https://github.com/testing-library/eslint-plugin-jest-dom#readme)                         |
+|    @testing-library/**jest-dom** | Custom jest matchers to test the state of the DOM.                                                        | [repo](https://github.com/testing-library/)                                                      |
+|       @testing-library/**react** | Simple and complete React DOM testing utilities that encourage good testing practices.                    | [repo](https://github.com/testing-library/react-testing-library)                                 |
+|                  @types/**jest** | Type definitions for Jest                                                                                 | [repo](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/jest)                |
+| @types/testing-library__jest-dom | Type definitions for Jest Dom                                                                             |                                                                                                  |
+| @typescript-eslint/eslint-plugin | An ESLint plugin which provides lint rules for TypeScript codebases.                                      | [repo](https://github.com/typescript-eslint/typescript-eslint)                                   |
+|                          cypress | Fast, easy and reliable testing for anything that runs in a browser.                                      | [site](https://www.cypress.io/), [repo](https://github.com/cypress-io/cypress)                   |
+
+`package.json`
+```json
+{
+  "scripts": {
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
+    "test:e2e": "cypress open"
+  }
+}
+```
