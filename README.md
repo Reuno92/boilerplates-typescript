@@ -926,7 +926,7 @@ Il permet de garder du code Source SCSS/SASS, le plus propre possible. J'ai pers
 ### 6 - Test unitaire et test bout-en-bout
 
 ```bash
-yarn add jest ts-jest @types/jest \ 
+yarn add jest ts-jest @types/jest ts-node \ 
 eslint-plugin-jest-dom @testing-library/{jest-dom,react} @types/testing-library__jest-dom \
 @typescript-eslint/eslint-plugin \
 cypress -D
@@ -988,7 +988,7 @@ Puis, il est proposé un exemple pour démarrer :
 
 ![https://docs.cypress.io/_nuxt/img/new-spec-added-confirmation.bb3adda.png](https://docs.cypress.io/_nuxt/img/new-spec-added-confirmation.bb3adda.png)
 
-#### Les tests
+#### Les tests en-to-end
 
 ##### 1ère méthodes
 Un task runner IJ a été créer pur l'occasion `end to end`, il lance le mode dev et ensuite la cypress
@@ -1016,3 +1016,58 @@ En cas de réussite, il stocke une vidéo mp4 dans le dossier `cypress/videos`.
 
 > Les contenus des dossiers ont été ignorés sur le repo.
 
+#### Jest
+
+Créer un dossier `__tests__` et créer un premier fichier avec comme suffix `test`
+
+Importer vos dépendances
+
+|    Name | Description                                                                                                                    | lien vers la doc                                                                                                                                                    |
+|--------:|:-------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| cleanup | Démonte les arbres React qui ont été montés avec render. Sinon il y a un risque les test que les tests ne soit pas idempotents | [cleanup](https://testing-library.com/docs/react-testing-library/api/#cleanup)                                                                                      |
+|  render | Rendu dans un conteneur qui est ajouté à document.body.                                                                        | [render](https://testing-library.com/docs/react-testing-library/api/#render), [options](https://testing-library.com/docs/react-testing-library/api/#render-options) |
+|  screen | Toutes les requêtes exportées par DOM Testing Library acceptent un conteneur comme premier argument.                           | [screen](https://testing-library.com/docs/queries/about/#screen)                                                                                                    |
+
+`app.test.tsx`
+````tsx
+import { cleanup, render, screen } from '@testing-library/react';
+import myComponent from '../path/to/file';
+import '@testing-library/jest-dom';
+
+describe('testology', () => {
+  afterEach(cleanup);
+  
+  it('should to have a heading', () => {
+      render(<MyComponent />);
+
+      const HEADING = screen.getByRole('heading', {
+        name: 'Home Page',
+      });
+
+      expect(HEADING).toBeInTheDocument();
+  });
+  
+  it('should to have a link going to about page', async () => {
+     const { getByTitle } = await render(<MyComponent />);
+     const LINK = getByTitle('my title on link');
+     
+     expect(LINK).toHaveAttribute('href', '/about');
+  });
+});
+````
+
+On passe la commande `yarn test` ou le runner `test`:
+
+```bash
+info  - SWC minify release candidate enabled. https://nextjs.link/swcmin
+info  - SWC minify release candidate enabled. https://nextjs.link/swcmin
+ PASS  __tests__/index.test.tsx
+  Home
+    √ should to have a heading (60 ms)
+    √ should to have a link going to about page (8 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        1.218 s
+```

@@ -50,9 +50,11 @@
     "eslint-plugin-sonarjs": "^0.15.0",
     "husky": "^8.0.1",
     "jest": "^28.1.3",
+    "jest-environment-jsdom": "^29.0.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.4",
     "ts-jest": "^28.0.8",
+    "ts-node": "^10.9.1",
     "typescript": "4.7.4"
   },
   "browsersList": [

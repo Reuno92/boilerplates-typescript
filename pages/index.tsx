@@ -20,11 +20,15 @@ const Home: NextPage = () => {
 
       <nav>
         <Link href="/about">
-          <a>About</a>
+          <a title="go to about page">About</a>
         </Link>
       </nav>
       <main>
         <h1>Home Page</h1>
+        <img
+          src="https://www.viseo.com/themes/viseo/images/logo-viseo--mobile.svg"
+          alt="viseo logo positive digital makers"
+        />
       </main>
       <footer>
         <p>Footer</p>
