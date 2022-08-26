@@ -929,7 +929,7 @@ Il permet de garder du code Source SCSS/SASS, le plus propre possible. J'ai pers
 yarn add jest ts-jest @types/jest \ 
 eslint-plugin-jest-dom @testing-library/{jest-dom,react} @types/testing-library__jest-dom \
 @typescript-eslint/eslint-plugin \
-cypress  -D
+cypress -D
 ```
 
 |                             Name | Description                                                                                               | Lien                                                                                             |
@@ -944,6 +944,8 @@ cypress  -D
 | @typescript-eslint/eslint-plugin | An ESLint plugin which provides lint rules for TypeScript codebases.                                      | [repo](https://github.com/typescript-eslint/typescript-eslint)                                   |
 |                          cypress | Fast, easy and reliable testing for anything that runs in a browser.                                      | [site](https://www.cypress.io/), [repo](https://github.com/cypress-io/cypress)                   |
 
+#### Configurer Cypress
+
 `package.json`
 ```json
 {
@@ -954,3 +956,63 @@ cypress  -D
   }
 }
 ```
+
+#### Lancer Cypress la première fois
+
+Il suffit de lancer la commande `yarn cypress open` et de suivre les instructions sur la fenêtre electron qui vient de s'ouvrir :
+
+![https://docs.cypress.io/_nuxt/img/launchpad.fcc7cac.png](https://docs.cypress.io/_nuxt/img/launchpad.fcc7cac.png)
+
+Cliquer sur E2E Testing, s'ensuit la création des différents fichiers de configurations :
+
+![https://docs.cypress.io/_nuxt/img/scaffolded-files.a797120.png](https://docs.cypress.io/_nuxt/img/scaffolded-files.a797120.png)
+
+Une fois que les fichiers ont été correctement été généré :
+
+![https://docs.cypress.io/_nuxt/img/select-browser.b7ecf05.png](https://docs.cypress.io/_nuxt/img/select-browser.b7ecf05.png)
+
+> Le choix peut différer selon les navigateurs que vous avez installés sur votre machine.
+> 
+> > ### Important
+> > À l'heure actuelle, les tests de composant sont encore en beta en août 2022.
+
+Par la suite, il est possible de créer notre premier test bout-en-bout. En cliquant sur `Create new empty spec` :
+
+![https://docs.cypress.io/_nuxt/img/create-new-empty-spec.08c8dab.png](https://docs.cypress.io/_nuxt/img/create-new-empty-spec.08c8dab.png)
+
+le nommer comme suit `cypress/e2e/<NOM_A_DONNER>.cy.ts`
+
+![https://docs.cypress.io/_nuxt/img/enter-path-for-new-spec.474c3f4.png](https://docs.cypress.io/_nuxt/img/enter-path-for-new-spec.474c3f4.png)
+
+Puis, il est proposé un exemple pour démarrer :
+
+![https://docs.cypress.io/_nuxt/img/new-spec-added-confirmation.bb3adda.png](https://docs.cypress.io/_nuxt/img/new-spec-added-confirmation.bb3adda.png)
+
+#### Les tests
+
+##### 1ère méthodes
+Un task runner IJ a été créer pur l'occasion `end to end`, il lance le mode dev et ensuite la cypress
+
+##### 2ème méthodes
+On lance la commande `yarn dev`, puis la command `cypress run`:
+
+```bash
+cypress run --browser chrome
+```
+> Si chrome est installé sur votre système et est dans votre environnement de variable, le nom du navigateur **TOUJOURS en minuscule**. Sinon :
+> ```bash
+> cypress run --browser path/to/binary/for/your/browser
+> ```
+
+Une des commandes les plus pratiques à utiliser :
+
+```bash
+cypres run --record --group 2x-chrome --browser chrome --parallel
+```
+
+Permet essentiellement de créer un groupe de test sur Chrome sur deux navigateurs.
+Si les tests échecs échoue, shoot une capture dans le dossier `cypress/screenshots`.
+En cas de réussite, il stocke une vidéo mp4 dans le dossier `cypress/videos`.
+
+> Les contenus des dossiers ont été ignorés sur le repo.
+
