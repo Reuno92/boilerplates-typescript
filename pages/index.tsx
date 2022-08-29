@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 /* eslint-disable react/function-component-definition */
 const Home: NextPage = () => {
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
       </nav>
       <main>
         <h1>Home Page</h1>
-        <img
+        <Image
           src="https://www.viseo.com/themes/viseo/images/logo-viseo--mobile.svg"
           alt="viseo logo positive digital makers"
         />

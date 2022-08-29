@@ -3,7 +3,6 @@ import Home from '../pages';
 import '@testing-library/jest-dom';
 
 describe('Home', () => {
-
   afterEach(() => {
     cleanup();
   });

@@ -65,6 +65,19 @@
       }
     ],
     "no-nested-ternary": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-inferrable-types": [
+      "error",
+      {
+        "ignoreParameters": true,
+        "ignoreProperties": true
+      }
+    ],
+    "camelcase": [
+      "error",{
+        "properties": "never",
+        "ignoreImports": true
+      }
+    ]
   }
 }
