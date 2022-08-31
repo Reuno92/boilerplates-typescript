@@ -6,9 +6,9 @@ const RICK_AND_MORTY_API = async (req: NextApiRequest, res: NextApiResponse<Resp
   const CONTROLLER = new RickMortyController();
   const { pid } = req.query;
 
-  if (req?.method === 'GET' && pid === 'all') {
+  if (req?.method === 'GET') {
     try {
-      return res.status(200).json(await CONTROLLER?.getList(10));
+      return res.status(200).json(await CONTROLLER?.getList(Number(pid)));
     } catch (e: NodeJS.ErrnoException | unknown | null) {
       if (instanceOfNodeError<TypeErrorConstructor>(e, TypeError)) {
         return res.status(500).send(e?.message);
