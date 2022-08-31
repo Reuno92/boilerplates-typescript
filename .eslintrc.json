@@ -78,6 +78,7 @@
         "properties": "never",
         "ignoreImports": true
       }
-    ]
+    ],
+    "react/no-array-index-key": "off"
   }
 }
