@@ -11,7 +11,6 @@ import { RickMortyResponseModel } from '../model/abstract/rickmorty/RickMortyRes
 import RickMortyPagination from '../model/abstract/rickmorty/RickMortyPagination';
 import Logo from '../public/img/logo-viseo--mobile.svg';
 
-/* eslint-disable react/function-component-definition */
 const Home: NextPage = () => {
   const [users, setUsers] = useState<Array<UserModel>>([]);
   const [usersError, setUserError] = useState<string | null>(null);
@@ -109,7 +108,7 @@ const Home: NextPage = () => {
         />
         <link
           rel="icon"
-          href="/favicon.ico"
+          href="https://www.viseo.com/themes/viseo/image-2/favicon_2.gif"
         />
       </Head>
 

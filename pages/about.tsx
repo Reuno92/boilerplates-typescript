@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import type { NextPage } from 'next';
 
-// eslint-disable-next-line react/function-component-definition
 const About: NextPage = () => {
   return (
     <>

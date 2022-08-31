@@ -79,6 +79,7 @@
         "ignoreImports": true
       }
     ],
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "react/function-component-definition": "off"
   }
 }
