@@ -115,9 +115,9 @@ const Home: NextPage = () => {
         <Row>
           <Col
             xs={12}
-            md={9}>
+            lg={9}>
             <h1 className="text-center">Welcome Page From</h1>
-            <section className="d-block">
+            <section className="image-container">
               <Image
                 src={Logo}
                 alt="Viseo logo positive digital makers"
@@ -209,31 +209,39 @@ const Home: NextPage = () => {
               {list && (
                 <Row>
                   {list?.map((person: RickMortyModel, index: number) => (
-                    <Card
-                      key={index}
-                      className="col-12 col-md-4 p-0 m-2">
-                      <Card.Img
-                        variant="top"
-                        src={person?.image}
-                      />
-                      <Card.Body>
-                        <Card.Title className="d-flex text-center flex-column">
-                          <span>{person?.name}</span>
+                    <Col
+                      xs={12}
+                      md={6}
+                      lg={4}
+                      xl={3}>
+                      <Card
+                        key={index}
+                        className="p-0">
+                        <Card.Img
+                          variant="top"
+                          src={person?.image}
+                        />
+                        <Card.Header className="text-center">
+                          <Card.Title>{person?.name}</Card.Title>
+                        </Card.Header>
+                        <Card.Body className="d-flex text-center flex-column">
                           <span className="m-2">{setStatus(person?.status)}</span>
                           <p>
                             <span>{person?.origin?.name.replace(/\(.*?\)|([^\W_]+[^\s-]*)/gm, '$1').trimEnd()}</span>
                             {person?.origin?.dimension && <small> - {person?.origin?.dimension}</small>}
                           </p>
-                        </Card.Title>
+                        </Card.Body>
 
-                        <ListGroup>
-                          <ListGroup.Item>{person?.gender}</ListGroup.Item>
-                          <ListGroup.Item>{person?.species}</ListGroup.Item>
-                          <ListGroup.Item>{person?.status}</ListGroup.Item>
-                          {person?.type && <ListGroup.Item>{person?.type}</ListGroup.Item>}
-                        </ListGroup>
-                      </Card.Body>
-                    </Card>
+                        <Card.Body>
+                          <ListGroup>
+                            <ListGroup.Item>{person?.gender}</ListGroup.Item>
+                            <ListGroup.Item>{person?.species}</ListGroup.Item>
+                            <ListGroup.Item>{person?.status}</ListGroup.Item>
+                            {person?.type && <ListGroup.Item>{person?.type}</ListGroup.Item>}
+                          </ListGroup>
+                        </Card.Body>
+                      </Card>
+                    </Col>
                   ))}
                 </Row>
               )}
@@ -242,7 +250,7 @@ const Home: NextPage = () => {
           </Col>
           <Col
             xs={12}
-            md={3}>
+            lg={3}>
             <aside>
               {usersError && <Alert variant="danger">{usersError}</Alert>}
               {users && (

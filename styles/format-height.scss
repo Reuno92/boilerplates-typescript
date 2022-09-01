@@ -1,0 +1,11 @@
+$measures : 10vh 20vh 30vh 50vh 60vh 70vh 80vh;
+
+@each $height in $measures {
+  .mt-#{$height} {
+    margin-top : $height !important;
+  }
+
+  .center-to-#{$height} {
+    margin : $height auto;
+  }
+}
