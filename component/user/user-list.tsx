@@ -1,6 +1,6 @@
-import { NextPage } from 'next';
 import Link from 'next/link';
 import { ListGroup } from 'react-bootstrap';
+import { FC } from 'react';
 import UserModel from '../../model/abstract/user/User.model';
 
 type UserListType = {
@@ -13,7 +13,7 @@ type UserListType = {
 };
 
 // eslint-disable-next-line react/function-component-definition
-const UserList: NextPage<UserListType> = (props: UserListType) => {
+const UserList: FC<UserListType> = (props: UserListType) => {
   const { list, style } = props;
   return (
     <ListGroup

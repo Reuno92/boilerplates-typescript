@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Alert, Badge, Card, Col, ListGroup, Pagination, Row } from 'react-bootstrap';
 import UserList from '../component/user/user-list';
 import UserModel from '../model/abstract/user/User.model';
@@ -23,7 +22,7 @@ const Home: NextPage = () => {
 
   const HEADER: { [key: string]: string } = { 'Content-Type': 'application/json; charset=utf8' };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const fetchUsersData = () => {
       fetch('https://jsonplaceholder.typicode.com/users/', {
         method: 'GET',
@@ -112,11 +111,6 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <nav>
-        <Link href="/about">
-          <a title="go to about page">About</a>
-        </Link>
-      </nav>
       <main className="container">
         <Row>
           <Col
@@ -265,9 +259,6 @@ const Home: NextPage = () => {
           </Col>
         </Row>
       </main>
-      <footer>
-        <p>Footer</p>
-      </footer>
     </>
   );
 };
