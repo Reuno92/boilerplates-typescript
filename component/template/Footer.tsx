@@ -19,22 +19,25 @@ const Footer: FC = () => {
               92100 Boulogne Billancourt
             </p>
           </Col>
-          <Col
-            as="ul"
-            className="list-unstyled">
-            <li className="h4">Company</li>
-            {NavigationRoutes.filter((route: NavigationModel) => route?.onFooter).map((route: NavigationModel) => (
-              <Link
-                href={route?.path}
-                key={route?.id}
-                passHref>
-                <a
-                  className="text-decoration-none"
-                  title={route?.title}>
-                  {route?.name}
-                </a>
-              </Link>
-            ))}
+          <Col className="list-unstyled flex-column">
+            <ul className="ps-0">
+              <h4>Company</h4>
+              {NavigationRoutes.filter((route: NavigationModel) => route?.onFooter).map((route: NavigationModel) => (
+                <li className="navbar-nav">
+                  <Link
+                    href={route?.path}
+                    key={route?.id}
+                    as="li"
+                    passHref>
+                    <a
+                      className="nav-link"
+                      title={route?.title}>
+                      {route?.name}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </Col>
         </Row>
       </Container>
