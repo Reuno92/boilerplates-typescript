@@ -8,13 +8,13 @@ describe('Navigation', () => {
     cy.visit(`${PROTOCOL}://${BASE_URL}:${PORT}`);
 
     // Trouver un lien avec l'attribut href contenant "about" et clique dessus.
-    cy.get('a[href*="about"]').click();
+    cy.get('#main-nav a[href*="about"]').click();
 
     // Se situant dans une url incluant "/about"
     cy.url().should('include', '/about');
 
     // La page nouvellement chargée contient un intitulé du nom de 'About Page'
-    cy.get('h1').contains('About Page');
+    cy.contains('h1', 'About Page');
   });
 });
 

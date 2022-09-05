@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
 
 import type { NextPage } from 'next';
+import { Container } from 'react-bootstrap';
 
 const About: NextPage = () => {
   return (
@@ -22,19 +22,11 @@ const About: NextPage = () => {
         />
       </Head>
 
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </nav>
-
       <main>
-        <h1>About Page</h1>
+        <Container>
+          <h1>About Page</h1>
+        </Container>
       </main>
-
-      <footer>
-        <p>Footer</p>
-      </footer>
     </>
   );
 };
