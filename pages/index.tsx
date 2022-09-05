@@ -213,7 +213,8 @@ const Home: NextPage = () => {
                       xs={12}
                       md={6}
                       lg={4}
-                      xl={3}>
+                      xl={3}
+                      key={index}>
                       <Card
                         key={index}
                         className="p-0">
@@ -251,7 +252,7 @@ const Home: NextPage = () => {
           <Col
             xs={12}
             lg={3}>
-            <aside>
+            <aside id="users">
               {usersError && <Alert variant="danger">{usersError}</Alert>}
               {users && (
                 <UserList
