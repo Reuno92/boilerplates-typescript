@@ -6,7 +6,7 @@ import { Alert, Col, Row } from 'react-bootstrap';
 import UserList from '../component/user/user-list';
 import UserModel from '../model/abstract/user/User.model';
 import Logo from '../public/img/logo-viseo--mobile.svg';
-import RickMortyList from '../component/RickMorty/RickMortyList';
+import PaginationUI from '../component/ui/Pagination.ui';
 
 const Home: NextPage = () => {
   const [users, setUsers] = useState<Array<UserModel>>([]);
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
             </section>
             <section>
               <h2>Your new collaborators</h2>
-              <RickMortyList />
+              <PaginationUI />
             </section>
           </Col>
           <Col

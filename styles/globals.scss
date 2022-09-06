@@ -4,20 +4,20 @@
 @import 'background-gradient';
 
 .main-height {
-  min-height: 83vh;
+  min-height : 83vh;
 }
 
 .image-container {
-  width: 100%;
+  width : 100%;
 
   > div {
-    position: unset;
+    position : unset;
   }
 
   img {
-    object-fit: contain;
-    width: 100%;
-    position: relative;
-    height: unset;
+    position : relative;
+    width : 100%;
+    height : unset;
+    object-fit : contain;
   }
 }
