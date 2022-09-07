@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import Home from '../pages';
+import Home from '../index';
 import '@testing-library/jest-dom';
-import Header from '../component/template/Header';
+import Header from '../../component/template/Header';
 
 describe('Home', () => {
   afterEach(() => {

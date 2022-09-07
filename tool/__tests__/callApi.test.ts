@@ -1,5 +1,5 @@
-import CallApi from '../tool/CallApi';
-import RickMortyRepository from '../controller/RickMorty.repository';
+import CallApi from '../CallApi';
+import RickMortyRepository from '../../controller/RickMorty.repository';
 
 describe('CallApi', () => {
   describe('JSON Placeholder API REST', () => {
