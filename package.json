@@ -69,7 +69,8 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npx tsc --noEmit && npx eslint --fix . && npx prettier --write . && yarn lint:scss"
+      "pre-commit": "npx tsc --noEmit && npx eslint --fix . && npx prettier --write . && yarn lint:scss",
+      "pre-push": "yarn test:ci"
     }
   }
 }
