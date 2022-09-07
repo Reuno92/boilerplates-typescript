@@ -81,6 +81,8 @@
     ],
     "react/no-array-index-key": "off",
     "react/function-component-definition": "off",
-    "@typescript-eslint/no-non-null-assertion": "warn"
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "class-methods-use-this": "off",
+    "jsx-a11y/no-redundant-roles": "warn"
   }
 }

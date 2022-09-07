@@ -1,5 +1,5 @@
 import CallApi from '../tool/CallApi';
-import RickMortyController from '../controller/RickMorty.controller';
+import RickMortyRepository from '../controller/RickMorty.repository';
 
 describe('CallApi', () => {
   describe('JSON Placeholder API REST', () => {
@@ -491,7 +491,7 @@ describe('CallApi', () => {
         },
       };
 
-      const EXPECTED = new RickMortyController().getList(10);
+      const EXPECTED = new RickMortyRepository().getList(10);
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore

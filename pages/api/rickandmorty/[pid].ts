@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import RickMortyController from '../../../controller/RickMorty.controller';
+import RickMortyRepository from '../../../controller/RickMorty.repository';
 import instanceOfNodeError from '../../../tool/Error.guard';
 
 const RICK_AND_MORTY_API = async (req: NextApiRequest, res: NextApiResponse<Response | void | string>) => {
-  const CONTROLLER = new RickMortyController();
+  const CONTROLLER = new RickMortyRepository();
   const { pid } = req.query;
 
   if (req?.method === 'GET') {

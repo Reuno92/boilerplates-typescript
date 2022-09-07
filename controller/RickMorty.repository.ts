@@ -2,7 +2,7 @@
 import { AxiosRequestHeaders } from 'axios';
 import CallApi from '../tool/CallApi';
 
-export default class RickMortyController {
+export default class RickMortyRepository {
   private readonly baseURI: string = 'https://rickandmortyapi.com/graphql';
 
   private api: CallApi;

@@ -1,6 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import Home from '../pages';
 import '@testing-library/jest-dom';
+import Header from '../component/template/Header';
 
 describe('Home', () => {
   afterEach(() => {
@@ -10,7 +11,7 @@ describe('Home', () => {
   it('should a heading', () => {
     render(<Home />);
     const HEADING = screen.getByRole('heading', {
-      name: 'Home Page',
+      name: 'Welcome Page From',
     });
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -24,12 +25,12 @@ describe('Home', () => {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    expect(IMG).toHaveAttribute('src', 'https://www.viseo.com/themes/viseo/images/logo-viseo--mobile.svg');
+    expect(IMG).toHaveAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
   });
 
   it('should a link for goes to about page', async () => {
-    const { getByTitle } = await render(<Home />);
-    const LINK = getByTitle('go to about page');
+    const { getByTitle } = await render(<Header />);
+    const LINK = getByTitle('Go to about page');
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

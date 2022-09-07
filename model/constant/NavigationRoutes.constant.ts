@@ -5,7 +5,7 @@ const NavigationRoutes: Array<NavigationModel> = new Array<NavigationModel>(
     id: 1,
     name: 'Home',
     path: '/',
-    title: 'Home Page',
+    title: 'Go to home page',
     onHeader: true,
     onFooter: false,
   },
@@ -13,7 +13,7 @@ const NavigationRoutes: Array<NavigationModel> = new Array<NavigationModel>(
     id: 2,
     name: 'About',
     path: '/about',
-    title: 'About Page',
+    title: 'Go to about page',
     onHeader: true,
     onFooter: true,
   }

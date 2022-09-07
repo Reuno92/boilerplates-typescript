@@ -3,6 +3,7 @@ import { Pagination } from 'react-bootstrap';
 import { RickMortyResponseModel } from '../../model/abstract/rickmorty/RickMortyResponse.model';
 import RickMortyModel from '../../model/abstract/rickmorty/RickMorty.model';
 import RickMortyPaginationModel from '../../model/abstract/rickmorty/RickMortyPagination.model';
+import CallApi from '../../tool/CallApi';
 
 type returnPagination<T> = {
   list: Array<T> | null;
@@ -28,16 +29,15 @@ function usePagination(link: string, page: number): returnPagination<RickMortyMo
   useEffect(() => {
     const fetchRMData = (): void => {
       setListError(null);
-      fetch(link + page, {
-        method: 'GET',
-        headers: HEADER,
-      })
-        .then((response: Response) => response.json())
-        .then((data: { data: { characters: RickMortyResponseModel<RickMortyModel> } }) => {
-          const CHARACTERS = data?.data?.characters;
-          setPagination(CHARACTERS?.info);
-          setActivePage(CHARACTERS?.info?.next && CHARACTERS?.info?.prev ? CHARACTERS.info.next - 1 : CHARACTERS.info.prev! + 1);
-          setList(CHARACTERS?.results);
+      new CallApi(link)
+        .get<{ data: { characters: RickMortyResponseModel<RickMortyModel> } }>(page.toString(10), HEADER)
+        .then((response: { data: { characters: RickMortyResponseModel<RickMortyModel> } } | void) => {
+          if (response) {
+            const CHARACTERS = response?.data?.characters;
+            setPagination(CHARACTERS?.info);
+            setActivePage(CHARACTERS?.info?.next && CHARACTERS?.info?.prev ? CHARACTERS.info.next - 1 : CHARACTERS.info.prev! + 1);
+            setList(CHARACTERS?.results);
+          }
         })
         .catch((err: Error) => setListError(err?.message));
     };
